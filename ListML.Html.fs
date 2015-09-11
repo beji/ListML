@@ -227,3 +227,8 @@ module HTML =
   let video = node "video"
   ///Defines a possible line-break
   let wbr = node "wbr"
+
+  let classAttr = attr "class"
+  let href = attr "href"
+  let src = attr "src"
+  let alt = attr "alt"
