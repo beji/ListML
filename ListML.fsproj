@@ -41,9 +41,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AssemblyInfo.fs"/>
     <Compile Include="ListML.fsi" />
     <Compile Include="ListML.fs" />
     <Compile Include="ListML.Html.fs" />
+    <Compile Include="ListML.Nuspec.fs" />
   </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>
