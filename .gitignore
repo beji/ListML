@@ -1,2 +1,8 @@
 bin/
 obj/
+.paket/paket.exe
+packages/
+.fake/
+*.nuspec
+AssemblyInfo.fs
+*.nupkg
