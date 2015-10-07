@@ -7,7 +7,7 @@ open ListML.Core
 open ListML.HTML
 
 doctype +
-html [attr "lang" "de"; attr "class" "test"] [
+html ["lang","de"; "class","test"] [
     head [] []
     body [] [
         img [attr "src" "http://lorempixel.com/g/100/100/"]

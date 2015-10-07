@@ -2,18 +2,18 @@ namespace ListML
 
 module Core =
 
-  type KeyValue = {key: string; value: string}
+  let attr (key:string) (value:string) = key, value
 
-  let attr key value = {key = key; value = value}
-
-  let renderAttribute kv = kv.key + "=\"" + kv.value + "\""
+  let renderAttribute kv =
+    let key, value = kv
+    key + "=\"" + value + "\""
 
   let checkforClosingTag hasClosingtag trueCond falseCond =
     match hasClosingtag with
     | true -> trueCond
     | false -> falseCond
 
-  let node (tag:string) (attributes:KeyValue list) (children: string list) =
+  let node (tag:string) (attributes:(string * string) list) (children: string list) =
 
     let hasClosingtag =
       match children with
