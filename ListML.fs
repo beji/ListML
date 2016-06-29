@@ -6,7 +6,7 @@ module Core =
 
   let renderAttribute kv =
     let key, value = kv
-    key + "=\"" + value + "\""
+    sprintf "%s=\"%s\"" key value
 
   let checkforClosingTag hasClosingtag trueCond falseCond =
     match hasClosingtag with
@@ -19,14 +19,16 @@ module Core =
       match children with
       | [] -> false
       | _ -> true
+    
+    let concat left right = sprintf "%s%s" left right
 
     [
       "<"
       tag
-      List.fold (fun left right -> left + " " + (renderAttribute right)) "" attributes
+      List.fold (fun left right -> sprintf "%s %s" left (renderAttribute right)) "" attributes
       checkforClosingTag hasClosingtag ">" "/>"
-      List.fold (fun left right -> left + "" + right) "" children
+      List.fold concat "" children
       checkforClosingTag hasClosingtag "</" ""
       checkforClosingTag hasClosingtag tag ""
       checkforClosingTag hasClosingtag ">" ""
-    ] |> List.fold (fun left right -> left + "" + right) ""
+    ] |> List.fold concat ""

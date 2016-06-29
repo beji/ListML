@@ -11,7 +11,7 @@ open ListML.Nuspec
 
 let title ="ListML"
 let desc = "ListML is a collection of rather basic functions to generate a string representation of a XML-tree. It is inspired (but not nearly as elegant as) the X-Expressions used in Racket. The ListML.HTML module contains functions to ease the creation of a HTML-Tree and serves as an implementation example"
-let versionString = "1.1.0.0"
+let versionString = "1.1.1.0"
 let author = "Björn Erlwein"
 
 
@@ -45,7 +45,7 @@ Target "Nuspec" (fun _ ->
         language ["en-US"]
         projectUrl ["https://github.com/beji/ListML"]
         licenseUrl ["https://github.com/beji/ListML/blob/master/LICENSE"]
-        copyright ["Copyright 2015"]]
+        copyright ["Copyright 2015-2016"]]
       files [
         file [attr "src" "bin/Release/ListML.dll"; attr "target" "lib"] []]]
   File.WriteAllText((title + ".nuspec"), nuspecfile)
